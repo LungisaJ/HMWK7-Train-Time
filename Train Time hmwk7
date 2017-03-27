@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Traintime</title>
+
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  		<link rel="stylesheet" type="text/css" href="C:\Users\Lungisa\Desktop\Homework\HMWK7\Traintime.css">
+
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="container">
+
+	<div class="jumbotron">
+
+		<h1> Anytime is Train Time</h1>
+
+		<h3>Choo Choo. Chee Chee.</h3>
+	</div>
+
+	<div id="train-schedule">
+
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th id="tn1">Train Name</th>
+				<th id="dstn1">Destination</th>
+				<th id="frqc1">Frequency (min)</th>
+				<th id="nxar1">Next Arrival (min)</th>
+				<th id="minawy1">Minutes Away</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td> Silver Train </td>
+				<td> Silver Spring </td>
+				<td> 30 mins </td>
+				<td> 14:30pm </td>
+				<td> 12 </td>
+			</tr>
+		</tbody>
+
+	</table>
+	</div>
+
+	<div class="form">
+  		<h2>Add Train</h2>
+
+  	<form>
+    	<div class="form-group">
+      		<label for="name">Train Name</label>
+      		<input type="train-name" class="form-control" id="name" placeholder="Enter name">
+    	</div>
+	    <div class="form-group">
+	      	<label for="dstn">Destination</label>
+	      	<input type="destination" class="form-control" id="dstn" placeholder="Enter destination">
+	    </div>
+
+     	<div class="form-group">
+      		<label for="time">First Train Time (HH:mm - military time)</label>
+      		<input type="train-time" class="form-control" id="time" placeholder="Enter time">
+    	</div>
+
+	    <div class="form-group">
+	      	<label for="freq">Frequency (min)</label>
+	      	<input type="frequency" class="form-control" id="freq" placeholder="Enter frequency">
+	    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+  </form>
+</div>
+</table>
+</div>
+</div>
+
+<script>
+/*$(document).ready(function() {
+	$('#submit').click(funcition() {
+		var name = $('#name').val();
+		var time = $('#time').val();
+	}):
+
+}*/
+    $("#add-user").on("click", function(event) {
+      event.preventDefault();
+
+      var name = $("#name").val().trim();
+      var destination = $("#dstn").val().trim();
+      var time = $("#time").val().trim();
+      var frequency = $("#freq").val().trim();
+
+      console.log(name);
+      console.log(destination);
+      console.log(time);
+      console.log(frequency);
+
+      $("#name").html();
+      $("#dstn").html();
+      $("#time").html();
+      $("#freq").html();
+
+     
+      $("#name").html(trn1);
+      $("#destination").html(dstn1);
+      $("#time").html(time1);
+      $("#frequency").html(frqnc1);
+
+      sessionStorage.clear();
+
+      sessionStorage.setItem("destination", destination);
+      sessionStorage.setItem("time", time);
+      sessionStorage.setItem("frequency", frequency);
+    });
+
+    $("#name-display").html(sessionStorage.getItem("name"));
+    $("#destination-display").html(sessionStorage.getItem("destination"));
+    $("#time-display").html(sessionStorage.getItem("time"));
+    $("#freq-display").html(sessionStorage.getItem("frequency"))
+    
+
+</script>
+
+</body>
+
+</html>
